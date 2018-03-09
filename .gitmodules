@@ -1,0 +1,7 @@
+[submodule "ai-safety-gridworlds"]
+	path = ai-safety-gridworlds
+	url = https://github.com/deepmind/ai-safety-gridworlds.git
+[submodule "pycolab"]
+	path = ai-safety-gridworlds/pycolab
+	url = https://github.com/deepmind/pycolab.git
+
