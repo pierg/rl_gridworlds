@@ -1,12 +1,10 @@
 ## Custom Dockerfile
-FROM consol/centos-xfce-vnc:1.1.0
+FROM consol/ubuntu-xfce-vnc:1.1.0
 
 ENV REFRESHED_AT 2017-04-10
 
 
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8 USER=$USER HOME=$HOME
-
-
 
 RUN echo "The working directory is: $HOME"
 RUN echo "The user is: $USER"
