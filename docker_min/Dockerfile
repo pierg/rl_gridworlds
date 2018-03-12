@@ -46,7 +46,7 @@ RUN pip --no-cache-dir install \
 # install python 3 dependencies
 RUN pip3 install --upgrade pip
 RUN pip3 --no-cache-dir install \
-    gym
+    gym \
     tensorflow==1.3.0 \
     click \
     bunch==1.0.1 \
