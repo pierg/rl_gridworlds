@@ -27,14 +27,32 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
 
 # Install python and pip
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
-    python-pip \
     python-numpy \
     python-dev
+
+# Installing pip and pip3
+RUN apt-get remove python-pip python3-pip
+RUN wget https://bootstrap.pypa.io/get-pip.py
+RUN python get-pip.py
+RUN python3 get-pip.py
+RUN rm get-pip.py
+RUN echo "PATH=\$PATH:/usr/local/bin" >> ~/.bashrc
 
 
 # install pip dependencies
 RUN pip --no-cache-dir install \
     absl-py
+
+# install python 3 dependencies
+RUN pip3 install --upgrade pip
+RUN pip3 --no-cache-dir install \
+    gym
+    tensorflow==1.3.0 \
+    click \
+    bunch==1.0.1 \
+    tqdm \
+    matplotlib \
+    Pillow
 
 
 RUN mkdir -p $HOME
