@@ -23,6 +23,7 @@ def parse_args():
     print(args)
     # parse the configurations from the config json file provided
     with open(args.config, 'r') as config_file:
+        print(config_file)
         config_args_dict = json.load(config_file)
     # convert the dictionary to a namespace using bunch lib
     config_args = Bunch(config_args_dict)
