@@ -30,7 +30,9 @@ def conv2d_p(name, x, w=None, num_filters=16, kernel_size=(3, 3), padding='SAME'
             variable_summaries(w)
         with tf.name_scope('layer_biases'):
             if isinstance(bias, float):
-                bias = tf.get_variable('biases', [num_filters], initializer=tf.constant_initializer(bias))
+                # ADDED
+                with tf.variable_scope(tf.get_variable_scope(), reuse=tf.AUTO_REUSE):
+                    bias = tf.get_variable('biases', [num_filters], initializer=tf.constant_initializer(bias))
             variable_summaries(bias)
         with tf.name_scope('layer_conv2d'):
             conv = tf.nn.conv2d(x, w, stride, padding)
@@ -64,7 +66,9 @@ def atrous_conv2d_p(name, x, w=None, num_filters=16, kernel_size=(3, 3), padding
             variable_summaries(w)
         with tf.name_scope('layer_biases'):
             if isinstance(bias, float):
-                bias = tf.get_variable('biases', [num_filters], initializer=tf.constant_initializer(bias))
+                # ADDED
+                with tf.variable_scope(tf.get_variable_scope(), reuse=tf.AUTO_REUSE):
+                    bias = tf.get_variable('biases', [num_filters], initializer=tf.constant_initializer(bias))
             variable_summaries(bias)
         with tf.name_scope('layer_atrous_conv2d'):
             conv = tf.nn.atrous_conv2d(x, w, dilation_rate, padding)
@@ -96,7 +100,9 @@ def conv2d_transpose_p(name, x, w=None, output_shape=None, kernel_size=(3, 3), p
         variable_summaries(w)
         deconv = tf.nn.conv2d_transpose(x, w, tf.stack(output_shape), strides=stride, padding=padding)
         if isinstance(bias, float):
-            bias = tf.get_variable('layer_biases', [output_shape[-1]], initializer=tf.constant_initializer(bias))
+            # ADDED
+            with tf.variable_scope(tf.get_variable_scope(), reuse=tf.AUTO_REUSE):
+                bias = tf.get_variable('layer_biases', [output_shape[-1]], initializer=tf.constant_initializer(bias))
         variable_summaries(bias)
         out = tf.nn.bias_add(deconv, bias)
 
@@ -275,10 +281,15 @@ def dense_p(name, x, w=None, output_dim=128, initializer=tf.contrib.layers.xavie
     n_in = x.get_shape()[-1].value
     with tf.variable_scope(name):
         if w == None:
-            w = variable_with_weight_decay([n_in, output_dim], initializer, l2_strength)
+            # SUBSTITUTED
+            # w = variable_with_weight_decay([n_in, output_dim], initializer, l2_strength)
+            with tf.variable_scope(tf.get_variable_scope(), reuse=tf.AUTO_REUSE):
+                w = variable_with_weight_decay([n_in, output_dim], initializer, l2_strength)
         variable_summaries(w)
         if isinstance(bias, float):
-            bias = tf.get_variable("layer_biases", [output_dim], tf.float32, tf.constant_initializer(bias))
+            # ADDED
+            with tf.variable_scope(tf.get_variable_scope(), reuse=tf.AUTO_REUSE):
+                bias = tf.get_variable("layer_biases", [output_dim], tf.float32, tf.constant_initializer(bias))
         variable_summaries(bias)
         output = tf.nn.bias_add(tf.matmul(x, w), bias)
         return output
@@ -381,7 +392,11 @@ def variable_with_weight_decay(kernel_shape, initializer, wd):
     :param wd:(weight decay) L2 regularization parameter.
     :return: The weights of the kernel initialized. The L2 loss is added to the loss collection.
     """
-    w = tf.get_variable('weights', kernel_shape, tf.float32, initializer=initializer)
+
+    # ADDED
+    with tf.variable_scope(tf.get_variable_scope(), reuse=tf.AUTO_REUSE):
+        w = tf.get_variable('weights', kernel_shape, tf.float32, initializer=initializer)
+
 
     collection_name = tf.GraphKeys.REGULARIZATION_LOSSES
     if wd and (not tf.get_variable_scope().reuse):
@@ -441,9 +456,9 @@ def noise_and_argmax(logits):
 
 def openai_entropy(logits):
     # Entropy proposed by OpenAI in their A2C baseline
-    a0 = logits - tf.reduce_max(logits, 1, keep_dims=True)
+    a0 = logits - tf.reduce_max(logits, 1, keepdims=True)
     ea0 = tf.exp(a0)
-    z0 = tf.reduce_sum(ea0, 1, keep_dims=True)
+    z0 = tf.reduce_sum(ea0, 1, keepdims=True)
     p0 = ea0 / z0
     return tf.reduce_sum(p0 * (tf.log(z0) - a0), 1)
 

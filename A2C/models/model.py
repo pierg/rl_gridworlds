@@ -88,7 +88,10 @@ class Model:
             grads = list(zip(grads, params))
             optimizer = tf.train.RMSPropOptimizer(learning_rate=self.learning_rate, decay=self.alpha,
                                                   epsilon=self.epsilon)
-            self.optimize = optimizer.apply_gradients(grads)
+
+            # ADDED
+            with tf.variable_scope(tf.get_variable_scope(), reuse=tf.AUTO_REUSE):
+                self.optimize = optimizer.apply_gradients(grads)
 
     def build(self, observation_space_params, num_actions):
         self.__set_observation_space_params(observation_space_params)
