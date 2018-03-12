@@ -7,12 +7,13 @@ from A2C import A2C
 def main():
     # Parse the JSON arguments
     config_args = None
-    try:
-        config_args = parse_args()
-    except Exception as e:
-        print (e)
-        print("Add a config file using \'--config file_name.json\'")
-        exit(1)
+    # try:
+    #     config_args = parse_args()
+    # except Exception as e:
+    #     print (e)
+    #     print("Add a config file using \'--config file_name.json\'")
+    #     exit(1)
+    config_args = parse_args()
 
     tf.reset_default_graph()
 
