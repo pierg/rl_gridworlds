@@ -32,7 +32,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
 
 # Installing pip and pip3
 RUN apt-get remove python-pip python3-pip
-RUN wget https://bootstrap.pypa.io/get-pip.py
+RUN curl -s https://bootstrap.pypa.io/get-pip.py
 RUN python get-pip.py
 RUN python3 get-pip.py
 RUN rm get-pip.py
@@ -40,6 +40,7 @@ RUN echo "PATH=\$PATH:/usr/local/bin" >> ~/.bashrc
 
 
 # install pip dependencies
+RUN pip install --upgrade pip
 RUN pip --no-cache-dir install \
     absl-py
 
