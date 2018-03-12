@@ -20,6 +20,7 @@ def parse_args():
     # Parse the arguments
     args = parser.parse_args()
 
+    print(args)
     # parse the configurations from the config json file provided
     with open(args.config, 'r') as config_file:
         config_args_dict = json.load(config_file)
