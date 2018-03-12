@@ -9,7 +9,8 @@ def main():
     config_args = None
     try:
         config_args = parse_args()
-    except:
+    except Exception as e:
+        print str(e)
         print("Add a config file using \'--config file_name.json\'")
         exit(1)
 
