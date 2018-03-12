@@ -22,7 +22,10 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     curl \
     nano \
     vim \
-    git
+    git \
+    zlib1g-dev \
+    cmake \
+    ffmpeg
 
 
 # Install python and pip
@@ -53,13 +56,14 @@ RUN pip3 --no-cache-dir install \
     bunch==1.0.1 \
     tqdm \
     matplotlib \
-    Pillow
+    Pillow \
+    atari-py
 
 
 RUN mkdir -p $HOME
 WORKDIR $HOME
 
 # Clone repositories
-RUN git clone --recursive https://github.com/pierg/rl_gridworlds.git
-RUN git clone https://github.com/openai/baselines.git
-RUN git clone https://github.com/MG2033/A2C.git
+#RUN git clone --recursive https://github.com/pierg/rl_gridworlds.git
+#RUN git clone https://github.com/openai/baselines.git
+#RUN git clone https://github.com/MG2033/A2C.git
