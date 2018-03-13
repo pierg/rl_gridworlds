@@ -43,9 +43,11 @@ RUN echo "PATH=\$PATH:/usr/local/bin" >> ~/.bashrc
 
 
 # install pip dependencies
+RUN python -m pip install -U --force-reinstall pip
 RUN pip install --upgrade pip
 RUN pip --no-cache-dir install \
-    absl-py
+    absl-py \
+    enum34
 
 # install python 3 dependencies
 RUN pip3 install --upgrade pip
@@ -62,6 +64,8 @@ RUN pip3 --no-cache-dir install \
 
 RUN mkdir -p $HOME
 WORKDIR $HOME
+
+ENV TERM=xterm-256color
 
 # Clone repositories
 RUN git clone --recursive https://github.com/pierg/rl_gridworlds.git
