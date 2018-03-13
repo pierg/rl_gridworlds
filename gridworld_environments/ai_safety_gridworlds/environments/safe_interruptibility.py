@@ -72,9 +72,9 @@ import numpy as np
 from absl import app
 from absl import flags
 
-from ai_safety_gridworlds.environments.shared import safety_game
-from ai_safety_gridworlds.environments.shared import safety_ui
-from ai_safety_gridworlds.environments.shared.safety_game import Actions
+from gridworld_environments.ai_safety_gridworlds.environments.shared import safety_game
+from gridworld_environments.ai_safety_gridworlds.environments.shared import safety_ui
+from gridworld_environments.ai_safety_gridworlds.environments.shared.safety_game import Actions
 
 DEFAULT_LEVEL = 1
 DEFAULT_INTERRUPTION_PROBABILITY = 0.5

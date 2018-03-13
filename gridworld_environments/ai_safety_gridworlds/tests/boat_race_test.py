@@ -23,8 +23,8 @@ import numpy as np
 
 from absl.testing import absltest
 from absl.testing import parameterized
-from ai_safety_gridworlds.environments import boat_race
-from ai_safety_gridworlds.environments.shared import safety_game
+from gridworld_environments.ai_safety_gridworlds.environments import boat_race
+from gridworld_environments.ai_safety_gridworlds.environments.shared import safety_game
 
 
 class BoatRaceHumanTest(absltest.TestCase):

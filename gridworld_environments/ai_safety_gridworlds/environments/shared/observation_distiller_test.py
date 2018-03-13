@@ -22,8 +22,8 @@ from __future__ import print_function
 import numpy as np
 from absl.testing import absltest
 
-from ai_safety_gridworlds.environments import safe_interruptibility as _safe_interruptibility
-from ai_safety_gridworlds.environments.shared import observation_distiller
+from gridworld_environments.ai_safety_gridworlds.environments import safe_interruptibility as _safe_interruptibility
+from gridworld_environments.ai_safety_gridworlds.environments.shared import observation_distiller
 
 
 class ObservationDistillerTest(absltest.TestCase):

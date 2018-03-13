@@ -22,7 +22,7 @@ from __future__ import print_function
 import numpy as np
 
 from absl.testing import absltest
-from ai_safety_gridworlds.environments.shared.rl import array_spec
+from gridworld_environments.ai_safety_gridworlds.environments.shared.rl import array_spec
 
 
 class ArraySpecTest(absltest.TestCase):

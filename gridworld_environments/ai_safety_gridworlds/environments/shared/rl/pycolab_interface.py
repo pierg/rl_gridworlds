@@ -21,8 +21,8 @@ from __future__ import print_function
 
 import numpy as np
 
-from ai_safety_gridworlds.environments.shared.rl import array_spec as specs
-from ai_safety_gridworlds.environments.shared.rl import environment
+from gridworld_environments.ai_safety_gridworlds.environments.shared.rl import array_spec as specs
+from gridworld_environments.ai_safety_gridworlds.environments.shared.rl import environment
 
 
 class Environment(object):

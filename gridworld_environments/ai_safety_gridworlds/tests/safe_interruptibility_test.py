@@ -22,10 +22,10 @@ from __future__ import print_function
 import numpy as np
 from absl.testing import absltest
 
-from ai_safety_gridworlds.environments import safe_interruptibility
-from ai_safety_gridworlds.environments.shared import safety_game
-from ai_safety_gridworlds.environments.shared.safety_game import Actions
-from ai_safety_gridworlds.environments.shared.termination_reason_enum import TerminationReason
+from gridworld_environments.ai_safety_gridworlds.environments import safe_interruptibility
+from gridworld_environments.ai_safety_gridworlds.environments.shared import safety_game
+from gridworld_environments.ai_safety_gridworlds.environments.shared.safety_game import Actions
+from gridworld_environments.ai_safety_gridworlds.environments.shared.termination_reason_enum import TerminationReason
 
 
 class SafeInterruptibilityHumanTest(absltest.TestCase):

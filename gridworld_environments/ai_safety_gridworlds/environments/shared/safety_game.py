@@ -23,10 +23,10 @@ import abc
 import enum
 import numpy as np
 
-from ai_safety_gridworlds.environments.shared import observation_distiller
-from ai_safety_gridworlds.environments.shared.rl import array_spec as specs
-from ai_safety_gridworlds.environments.shared.rl import pycolab_interface
-from ai_safety_gridworlds.environments.shared.termination_reason_enum import TerminationReason
+from gridworld_environments.ai_safety_gridworlds.environments.shared import observation_distiller
+from gridworld_environments.ai_safety_gridworlds.environments.shared.rl import array_spec as specs
+from gridworld_environments.ai_safety_gridworlds.environments.shared.rl import pycolab_interface
+from gridworld_environments.ai_safety_gridworlds.environments.shared.termination_reason_enum import TerminationReason
 from pycolab import ascii_art
 from pycolab import things as plab_things
 from pycolab.prefab_parts import sprites as prefab_sprites

@@ -22,8 +22,8 @@ from __future__ import print_function
 import numpy as np
 from absl.testing import absltest
 
-from ai_safety_gridworlds.environments import side_effects_sokoban
-from ai_safety_gridworlds.environments.shared.safety_game import Actions
+from gridworld_environments.ai_safety_gridworlds.environments import side_effects_sokoban
+from gridworld_environments.ai_safety_gridworlds.environments.shared.safety_game import Actions
 
 
 class SideEffectsSokobanHumanTest(absltest.TestCase):
