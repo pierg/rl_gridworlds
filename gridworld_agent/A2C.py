@@ -104,7 +104,7 @@ class A2C:
         # from envs.gym_env import GymEnv
         # envs_to_class = {'GymEnv': GymEnv}
 
-        from ../../gridworld_environments/ai_safety_gridworlds.environments.shared import safety_game
+        from gridworld_environments/ai_safety_gridworlds.environments.shared import safety_game
         envs_to_class = {'BoatRaceEnvironment': BoatRaceEnvironment}
 
         if env_name in envs_to_class:
