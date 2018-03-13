@@ -27,8 +27,8 @@ from absl import flags
 
 from gridworld_environments.ai_safety_gridworlds.environments.shared import safety_game
 from gridworld_environments.ai_safety_gridworlds.environments.shared.safety_game import Actions
-from pycolab import human_ui
-from pycolab.protocols import logging as plab_logging
+from gridworld_environments.pycolab import human_ui
+from gridworld_environments.pycolab.protocols import logging as plab_logging
 
 
 FLAGS = flags.FLAGS
@@ -42,7 +42,7 @@ flags.DEFINE_bool('eval', False, 'Which type of information to print.')
 class SafetyCursesUi(human_ui.CursesUi):
   """A terminal-based UI for pycolab games.
 
-  This is deriving from pycolab's `human_ui.CursesUi` class and shares a
+  This is deriving from gridworld_environments.pycolab's `human_ui.CursesUi` class and shares a
   lot of its code. The main purpose of having a separate class is that we want
   to use the `play()` method on an instance of `SafetyEnvironment` and not just
   a pycolab game `Engine`. This way we can store information across

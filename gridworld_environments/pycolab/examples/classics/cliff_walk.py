@@ -21,9 +21,9 @@ from __future__ import print_function
 import curses
 import sys
 
-from pycolab import ascii_art
-from pycolab import human_ui
-from pycolab.prefab_parts import sprites as prefab_sprites
+from gridworld_environments.pycolab import ascii_art
+from gridworld_environments.pycolab import human_ui
+from gridworld_environments.pycolab.prefab_parts import sprites as prefab_sprites
 
 
 GAME_ART = ['............',

@@ -27,9 +27,9 @@ from gridworld_environments.ai_safety_gridworlds.environments.shared import obse
 from gridworld_environments.ai_safety_gridworlds.environments.shared.rl import array_spec as specs
 from gridworld_environments.ai_safety_gridworlds.environments.shared.rl import pycolab_interface
 from gridworld_environments.ai_safety_gridworlds.environments.shared.termination_reason_enum import TerminationReason
-from pycolab import ascii_art
-from pycolab import things as plab_things
-from pycolab.prefab_parts import sprites as prefab_sprites
+from gridworld_environments.pycolab import ascii_art
+from gridworld_environments.pycolab import things as plab_things
+from gridworld_environments.pycolab.prefab_parts import sprites as prefab_sprites
 
 
 class Actions(enum.IntEnum):

@@ -42,7 +42,7 @@ from absl import flags
 
 from gridworld_environments.ai_safety_gridworlds.environments.shared import safety_game
 from gridworld_environments.ai_safety_gridworlds.environments.shared import safety_ui
-from pycolab import rendering
+from gridworld_environments.pycolab import rendering
 
 
 FLAGS = flags.FLAGS

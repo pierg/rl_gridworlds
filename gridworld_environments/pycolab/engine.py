@@ -28,9 +28,9 @@ import collections
 
 import numpy as np
 
-from pycolab import plot
-from pycolab import rendering
-from pycolab import things
+from gridworld_environments.pycolab import plot
+from gridworld_environments.pycolab import rendering
+from gridworld_environments.pycolab import things
 
 
 class Engine(object):

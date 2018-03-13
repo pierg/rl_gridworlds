@@ -26,7 +26,7 @@ from gridworld_environments.ai_safety_gridworlds.environments import tomato_wate
 from gridworld_environments.ai_safety_gridworlds.environments.shared import safety_game
 from gridworld_environments.ai_safety_gridworlds.environments.shared.safety_game import Actions
 from gridworld_environments.ai_safety_gridworlds.environments.shared.termination_reason_enum import TerminationReason
-from pycolab.tests import test_things as tt
+from gridworld_environments.pycolab.tests import test_things as tt
 
 
 class TomatoWateringHumanTest(absltest.TestCase):

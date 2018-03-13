@@ -21,12 +21,12 @@ from __future__ import print_function
 import numpy as np
 import tensorflow as tf
 
-from pycolab import ascii_art
-from pycolab import plot
-from pycolab import things
-from pycolab.prefab_parts import drapes as prefab_drapes
-from pycolab.protocols import scrolling
-from pycolab.tests import test_things as tt
+from gridworld_environments.pycolab import ascii_art
+from gridworld_environments.pycolab import plot
+from gridworld_environments.pycolab import things
+from gridworld_environments.pycolab.prefab_parts import drapes as prefab_drapes
+from gridworld_environments.pycolab.protocols import scrolling
+from gridworld_environments.pycolab.tests import test_things as tt
 
 
 class ScrollingTest(tt.PycolabTestCase):

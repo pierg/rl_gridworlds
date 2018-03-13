@@ -27,9 +27,9 @@ import numpy as np
 
 import sys
 
-from pycolab import ascii_art
-from pycolab import human_ui
-from pycolab import things
+from gridworld_environments.pycolab import ascii_art
+from gridworld_environments.pycolab import human_ui
+from gridworld_environments.pycolab import things
 
 
 HELLO_ART = ['                                    ',

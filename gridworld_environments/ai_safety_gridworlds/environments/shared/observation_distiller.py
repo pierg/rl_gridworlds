@@ -26,7 +26,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from pycolab import rendering
+from gridworld_environments.pycolab import rendering
 
 
 class ObservationToArrayWithRGB(object):
