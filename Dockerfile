@@ -64,6 +64,4 @@ RUN mkdir -p $HOME
 WORKDIR $HOME
 
 # Clone repositories
-#RUN git clone --recursive https://github.com/pierg/rl_gridworlds.git
-#RUN git clone https://github.com/openai/baselines.git
-#RUN git clone https://github.com/MG2033/A2C.git
+RUN git clone --recursive https://github.com/pierg/rl_gridworlds.git
