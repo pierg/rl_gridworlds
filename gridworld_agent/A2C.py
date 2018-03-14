@@ -104,6 +104,9 @@ class A2C:
         from envs.gym_env import GymEnv
         envs_to_class = {'GymEnv': GymEnv}
 
+        from envs.gridworld_env import GridworldEnv
+        envs_to_class = {'GridworldEnv': GridworldEnv}
+
         if env_name in envs_to_class:
             return envs_to_class[env_name]
         raise ValueError("There is no environment with this name. Make sure that the environment exists.")
