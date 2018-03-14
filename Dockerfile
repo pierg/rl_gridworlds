@@ -68,4 +68,4 @@ WORKDIR $HOME
 ENV TERM=xterm-256color
 
 # Clone repositories
-RUN git clone --recursive https://github.com/pierg/rl_gridworlds.git
+#RUN git clone --recursive https://github.com/pierg/rl_gridworlds.git
