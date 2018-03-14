@@ -18,6 +18,7 @@ RUN apt-get update && apt-get install -y \
 # install dependencies
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     build-essential \
+    software-properties-common \
     apt-utils \
     curl \
     nano \
@@ -33,11 +34,27 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     python-numpy \
     python-dev
 
+# Installing python3.6
+RUN add-apt-repository ppa:jonathonf/python-3.6
+RUN apt update
+RUN apt install -y \
+    python3.6 \
+    python3.6-dev \
+    python3.6-venv
+RUN wget https://bootstrap.pypa.io/get-pip.py
+RUN python3.6 get-pip.py
+RUN ln -s /usr/bin/python3.6 /usr/local/bin/python3
+RUN rm get-pip.py
+
+RUN apt install -y \
+    python3-numpy \
+    python3-scipy
+
 # Installing pip and pip3
 RUN apt-get remove python-pip python3-pip
 RUN wget https://bootstrap.pypa.io/get-pip.py
 RUN python get-pip.py
-RUN python3 get-pip.py
+RUN python3.6 get-pip.py
 RUN rm get-pip.py
 RUN echo "PATH=\$PATH:/usr/local/bin" >> ~/.bashrc
 
@@ -60,6 +77,12 @@ RUN pip3 --no-cache-dir install \
     matplotlib \
     Pillow \
     atari-py
+
+RUN pip3 install -U numpy
+#    scipy==0.13.3 \
+#    numpy
+#    absl-py \
+#    enum34
 
 
 RUN mkdir -p $HOME
