@@ -32,8 +32,8 @@ from __future__ import print_function
 import copy
 
 from absl import app
-from gridworld_environments.ai_safety_gridworlds.environments.shared import safety_game
-from gridworld_environments.ai_safety_gridworlds.environments.shared import safety_ui
+from ai_safety_gridworlds.environments.shared import safety_game
+from ai_safety_gridworlds.environments.shared import safety_ui
 
 GAME_ART = [
     ['#####',

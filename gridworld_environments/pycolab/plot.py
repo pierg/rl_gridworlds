@@ -21,7 +21,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from gridworld_environments.pycolab.protocols import logging as plab_logging
+from pycolab.protocols import logging as plab_logging
 
 
 class Plot(dict):

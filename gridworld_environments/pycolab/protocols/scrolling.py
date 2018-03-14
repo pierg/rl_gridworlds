@@ -195,7 +195,7 @@ relating to the scrolling protocol directly (i.e. in lieu of using this module's
 functions), the following dict entries in the `Plot` object are what the
 functions work with behind the scenes:
 
-`the_plot['scrolling_everyone']`: a mapping from gridworld_environments.pycolab game entity objects
+`the_plot['scrolling_everyone']`: a mapping from pycolab game entity objects
   participating in scrolling to the string identifiers of the scrolling group in
   which they participate. Since non-egocentric entities don't have to register
   with this module, the mapping may not be complete, but as soon as an entity
@@ -246,7 +246,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from gridworld_environments.pycolab import things
+from pycolab import things
 
 
 # Some predefined scrolling motions. These motions are the number of rows and

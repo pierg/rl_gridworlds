@@ -27,10 +27,10 @@ import numpy as np
 
 import sys
 
-from gridworld_environments.pycolab import ascii_art
-from gridworld_environments.pycolab import human_ui
-from gridworld_environments.pycolab import things as plab_things
-from gridworld_environments.pycolab.prefab_parts import sprites as prefab_sprites
+from pycolab import ascii_art
+from pycolab import human_ui
+from pycolab import things as plab_things
+from pycolab.prefab_parts import sprites as prefab_sprites
 
 
 GAME_ART = ['===================================================',

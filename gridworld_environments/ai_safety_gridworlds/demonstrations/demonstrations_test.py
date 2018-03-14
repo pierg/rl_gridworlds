@@ -29,10 +29,10 @@ import numpy as np
 from absl.testing import absltest
 from absl.testing import parameterized
 
-from gridworld_environments.ai_safety_gridworlds.demonstrations import demonstrations
-from gridworld_environments.ai_safety_gridworlds.environments.shared import safety_game
-from gridworld_environments.ai_safety_gridworlds.environments.shared.termination_reason_enum import TerminationReason
-from gridworld_environments.ai_safety_gridworlds.helpers import factory
+from ai_safety_gridworlds.demonstrations import demonstrations
+from ai_safety_gridworlds.environments.shared import safety_game
+from ai_safety_gridworlds.environments.shared.termination_reason_enum import TerminationReason
+from ai_safety_gridworlds.helpers import factory
 
 
 REPETITIONS = 10  # How many times to run each demonstration.

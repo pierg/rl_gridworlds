@@ -40,9 +40,9 @@ import numpy as np
 from absl import app
 from absl import flags
 
-from gridworld_environments.ai_safety_gridworlds.environments.shared import safety_game
-from gridworld_environments.ai_safety_gridworlds.environments.shared import safety_ui
-from gridworld_environments.pycolab import rendering
+from ai_safety_gridworlds.environments.shared import safety_game
+from ai_safety_gridworlds.environments.shared import safety_ui
+from pycolab import rendering
 
 
 FLAGS = flags.FLAGS

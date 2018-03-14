@@ -22,8 +22,8 @@ import itertools
 
 import numpy as np
 
-from gridworld_environments.pycolab import engine
-from gridworld_environments.pycolab import things
+from pycolab import engine
+from pycolab import things
 
 
 def ascii_art_to_game(art,

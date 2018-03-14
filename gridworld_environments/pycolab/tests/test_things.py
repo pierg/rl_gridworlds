@@ -20,7 +20,7 @@ these injections are ideal for specifying tests, particularly if your test case
 inherits from the `PycolabTestCase` class also defined in this module. A typical
 pattern looks like this:
 
-    from gridworld_environments.pycolab.tests import test_things as tt
+    from pycolab.tests import test_things as tt
 
     class MyTest(tt.PycolabTestCase):
 
@@ -52,10 +52,10 @@ from __future__ import print_function
 import numpy as np
 import tensorflow as tf
 
-from gridworld_environments.pycolab import ascii_art
-from gridworld_environments.pycolab import things as plab_things
-from gridworld_environments.pycolab.prefab_parts import drapes
-from gridworld_environments.pycolab.prefab_parts import sprites
+from pycolab import ascii_art
+from pycolab import things as plab_things
+from pycolab.prefab_parts import drapes
+from pycolab.prefab_parts import sprites
 
 
 def pre_update(engine, character, thing_to_do):

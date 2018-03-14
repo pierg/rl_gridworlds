@@ -101,11 +101,8 @@ class A2C:
 
     @staticmethod
     def env_name_parser(env_name):
-        # from envs.gym_env import GymEnv
-        # envs_to_class = {'GymEnv': GymEnv}
-
-        from gridworld_environments.ai_safety_gridworlds.environments.shared import safety_game
-        envs_to_class = {'BoatRaceEnvironment': BoatRaceEnvironment}
+        from envs.gym_env import GymEnv
+        envs_to_class = {'GymEnv': GymEnv}
 
         if env_name in envs_to_class:
             return envs_to_class[env_name]

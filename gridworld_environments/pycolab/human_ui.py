@@ -23,7 +23,7 @@ import curses
 import datetime
 import textwrap
 
-from gridworld_environments.pycolab.protocols import logging as plab_logging
+from pycolab.protocols import logging as plab_logging
 
 
 class CursesUi(object):

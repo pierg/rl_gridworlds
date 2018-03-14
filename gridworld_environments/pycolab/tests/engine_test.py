@@ -27,9 +27,9 @@ from __future__ import print_function
 import numpy as np
 import tensorflow as tf
 
-from gridworld_environments.pycolab import ascii_art
-from gridworld_environments.pycolab import rendering
-from gridworld_environments.pycolab.tests import test_things as tt
+from pycolab import ascii_art
+from pycolab import rendering
+from pycolab.tests import test_things as tt
 
 
 class EngineTest(tt.PycolabTestCase):

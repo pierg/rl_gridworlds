@@ -22,9 +22,9 @@ from __future__ import print_function
 
 import tensorflow as tf
 
-from gridworld_environments.pycolab import ascii_art
-from gridworld_environments.pycolab.prefab_parts import sprites as prefab_sprites
-from gridworld_environments.pycolab.tests import test_things as tt
+from pycolab import ascii_art
+from pycolab.prefab_parts import sprites as prefab_sprites
+from pycolab.tests import test_things as tt
 
 
 class MazeWalkerTest(tt.PycolabTestCase):

@@ -20,8 +20,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from gridworld_environments.pycolab import things
-from gridworld_environments.pycolab.protocols import scrolling
+from pycolab import things
+from pycolab.protocols import scrolling
 
 
 class MazeWalker(things.Sprite):

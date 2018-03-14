@@ -22,9 +22,9 @@ from __future__ import print_function
 
 import numpy as np
 
-from gridworld_environments.pycolab import ascii_art
-from gridworld_environments.pycolab import things
-from gridworld_environments.pycolab.protocols import scrolling
+from pycolab import ascii_art
+from pycolab import things
+from pycolab.protocols import scrolling
 
 
 class Scrolly(things.Drape):
