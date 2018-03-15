@@ -355,8 +355,8 @@ class CursesUi(object):
     # plus the two default colours, plus the largest colour id (which we seem
     # not to be able to assign, at least not with xterm-256color) stick with
     # boring old white on black.
-    colours = set(self._colour_fg.itervalues()).union(
-        self._colour_bg.itervalues())
+    colours = set(self._colour_fg.values()).union(
+        self._colour_bg.values())
     if (curses.COLORS - 2) < len(colours): return
 
     # Get all unique characters that have a foreground and/or background colour.

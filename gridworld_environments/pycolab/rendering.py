@@ -262,7 +262,7 @@ class ObservationCharacterRepainter(object):
     # Determine whether we need to (re)allocate the layer storage for this new
     # (possibly differently-shaped) observation. If we do, do it.
     if ((self._layers is None) or
-        (next(self._layers.itervalues()).shape !=
+        (next(self._layers.values()).shape !=
          original_observation.board.shape)):
       rows, cols = original_observation.board.shape
       self._layers = {char: np.zeros((rows, cols), dtype=np.bool_)
@@ -305,7 +305,7 @@ class ObservationCharacterRepainter(object):
 
     def itervalues(self):
       my_class = ObservationCharacterRepainter._DefaultToIdentityAsciiMapping  # pylint: disable=protected-access
-      return (np.uint8(ord(c)) for c in super(my_class, self).itervalues())
+      return (np.uint8(ord(c)) for c in super(my_class, self).values())
 
 
 class ObservationToArray(object):
@@ -357,13 +357,13 @@ class ObservationToArray(object):
 
     # Attempt to infer a dtype for self._array if none is specified.
     self._dtype = (dtype if dtype is not None else
-                   np.array(next(value_mapping.itervalues())).dtype)
+                   np.array(next(value_mapping.values())).dtype)
 
     # Will we create a 2-D or a 3-D array? Only 3-D if the values in the mapping
     # can be an argument to `len()`; if so, that's also the depth of our
     # 3-D array.
     try:
-      self._depth = len(next(value_mapping.itervalues()))
+      self._depth = len(next(value_mapping.values()))
       self._is_3d = True
     except TypeError:
       self._depth = 1  # Again, the array is always 3-D behind the scenes.
