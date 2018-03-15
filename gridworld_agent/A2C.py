@@ -105,7 +105,7 @@ class A2C:
         envs_to_class = {'GymEnv': GymEnv}
 
         from envs.gridworld_env import GridworldEnv
-        envs_to_class = {'GridworldEnv': GridworldEnv}
+        envs_to_class.update({'GridworldEnv': GridworldEnv})
 
         if env_name in envs_to_class:
             return envs_to_class[env_name]
