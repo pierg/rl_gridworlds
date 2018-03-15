@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-docker build . -t rl_gridworlds:master
+docker build . -t rl_gridworlds:baselines
