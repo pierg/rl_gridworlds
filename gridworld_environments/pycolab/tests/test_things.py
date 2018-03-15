@@ -385,9 +385,9 @@ class PycolabTestCase(tf.test.TestCase):
 
       engine.the_plot['machinima_args'] = args
 
-      for character, thing_to_do in pre_updates.iteritems():
+      for character, thing_to_do in pre_updates.items():
         pre_update(engine, character, thing_to_do)
-      for character, thing_to_do in post_updates.iteritems():
+      for character, thing_to_do in post_updates.items():
         post_update(engine, character, thing_to_do)
 
       observation, reward, discount = engine.play(action)

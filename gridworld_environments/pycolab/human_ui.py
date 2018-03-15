@@ -121,7 +121,7 @@ class CursesUi(object):
     try:
       self._keycodes_to_actions = {
           ord(key) if isinstance(key, str) else key: action
-          for key, action in keys_to_actions.iteritems()}
+          for key, action in keys_to_actions.items()}
     except TypeError:
       raise TypeError('keys in the keys_to_actions argument must either be '
                       'numerical keycodes or single ASCII character strings.')
@@ -192,7 +192,7 @@ class CursesUi(object):
     # See whether the user is using any reserved keys. This check ought to be in
     # the constructor, but it can't run until curses is actually initialised, so
     # it's here instead.
-    for key, action in self._keycodes_to_actions.iteritems():
+    for key, action in self._keycodes_to_actions.items():
       if key in (curses.KEY_PPAGE, curses.KEY_NPAGE):
         raise ValueError(
             'the keys_to_actions argument to the CursesUi constructor binds '
@@ -376,7 +376,7 @@ class CursesUi(object):
     colour_ids = dict(zip(colours, ids))
 
     # Program these colours into curses.
-    for colour, cid in colour_ids.iteritems():
+    for colour, cid in colour_ids.items():
       curses.init_color(cid, *colour)
 
     # Now add the default colours to the colour-to-ID map.
@@ -392,7 +392,7 @@ class CursesUi(object):
         {character: pid for pid, character in enumerate(characters, start=1)})
 
     # Program these color pairs into curses, and that's all there is to do.
-    for character, pid in self._colour_pair.iteritems():
+    for character, pid in self._colour_pair.items():
       # Get foreground and background colours for this character. Note how in
       # the absence of a specified background colour, the same colour as the
       # foreground is used.

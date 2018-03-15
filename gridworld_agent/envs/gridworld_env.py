@@ -4,7 +4,10 @@ from envs.subproc_vec_env import *
 from ai_safety_gridworlds.environments import boat_race
 
 class GridworldEnv(BaseEnv):
-    def __init__(self, env_name, id):
+    def __init__(self, env_name, id, seed):
+        super().__init__(env_name, id)
+        self.seed = seed
+        self.make()
         self.env_name = env_name
         self.rank = id
         self.env = None

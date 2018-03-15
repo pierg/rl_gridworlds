@@ -171,7 +171,7 @@ class BaseObservationRenderer(object):
       presented to this `BaseObservationRenderer` since the last call to its
       `clear()` method.
     """
-    for character, layer in self._layers.iteritems():
+    for character, layer in self._layers.items():
       np.equal(self._board, ord(character), out=layer)
     return Observation(board=self._board, layers=self._layers)
 
@@ -273,7 +273,7 @@ class ObservationCharacterRepainter(object):
     board = self._board_converter(original_observation)
 
     # Compute the mask layers from the newly repainted board.
-    for character, layer in self._layers.iteritems():
+    for character, layer in self._layers.items():
       np.equal(board, ord(character), out=layer)
 
     # Return the new observation.
@@ -357,7 +357,7 @@ class ObservationToArray(object):
 
     # Attempt to infer a dtype for self._array if none is specified.
     self._dtype = (dtype if dtype is not None else
-                   np.array(next(value_mapping.values())).dtype)
+                   np.array(next(iter(value_mapping.values()))).dtype)
 
     # Will we create a 2-D or a 3-D array? Only 3-D if the values in the mapping
     # can be an argument to `len()`; if so, that's also the depth of our

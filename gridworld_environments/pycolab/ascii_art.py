@@ -129,15 +129,15 @@ def ascii_art_to_game(art,
   if sprites is None: sprites = {}
   if drapes is None: drapes = {}
   sprites = {char: sprite if isinstance(sprite, Partial) else Partial(sprite)
-             for char, sprite in sprites.iteritems()}
+             for char, sprite in sprites.items()}
   drapes = {char: drape if isinstance(drape, Partial) else Partial(drape)
-            for char, drape in drapes.iteritems()}
+            for char, drape in drapes.items()}
 
   # Likewise, turn a bare Backdrop class into an argument-free Partial.
   if not isinstance(backdrop, Partial): backdrop = Partial(backdrop)
 
   # Compile characters corresponding to all Sprites and Drapes.
-  non_backdrop_characters = set(sprites.keys() + drapes.keys())
+  non_backdrop_characters = set(list(sprites.keys()) + list(drapes.keys()))
   if update_schedule is None: update_schedule = list(non_backdrop_characters)
 
   # If update_schedule is a string (someone wasn't reading the docs!),
